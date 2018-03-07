@@ -356,7 +356,7 @@ Dashboards.blockUIwithDrag = function() {
 };
 
 Dashboards.updateLifecycle = function(object) {
-    var silent = object.lifecycle ? !!object.lifecycle.silent : false;
+    var silent = !!object.lifecycleSilent;
 
     if( object.disabled ){
       return;
@@ -857,9 +857,7 @@ Dashboards.initEngine = function(initInstance) {
   var postInitComponent = {
     name: "PostInitMarker",
     type: "unmanaged",
-    lifecycle: {
-      silent: true
-    },
+    lifecycleSilent: true,
     executeAtStart: true,
     priority:999999999
   };

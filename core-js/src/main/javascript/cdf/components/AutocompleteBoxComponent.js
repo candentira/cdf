@@ -113,8 +113,7 @@ define([
      */
     update: function() {
       // Allow the component to be silent
-      if(this.lifecycle) { this.lifecycle.silent = this.silent === true; }
-      else { this.lifecycle = {silent: this.silent === true}; }
+      this.lifecycleSilent = this.silent === true;
 
       if(!this.preExec()) {
         return;
