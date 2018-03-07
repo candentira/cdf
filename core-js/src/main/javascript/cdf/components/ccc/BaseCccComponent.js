@@ -100,7 +100,7 @@ define([
       }
 
       // clear placeholder
-      var ph = $("#" + this.htmlObject).empty();
+      var ph = $("#" + this.htmlObject);
       var me = this;
 
       // Set up defaults for height and width
@@ -199,7 +199,9 @@ define([
         });
       }
 
-      this.chart.render();
+      this.chart.render({
+        bypassAnimation: true
+      });
     }
   });
 
